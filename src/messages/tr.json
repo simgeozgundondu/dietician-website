@@ -1,0 +1,119 @@
+{
+  "common": {
+    "readMore": "Devamını Oku",
+    "readTime": "dakika okuma",
+    "contact": "İletişim",
+    "blog": "Blog",
+    "recipes": "Tarifler",
+    "home": "Anasayfa",
+    "about": "Hakkımda",
+    "getInfo": "Bilgi Al",
+    "send": "Gönder",
+    "name": "İsim",
+    "email": "Email",
+    "message": "Mesaj",
+    "calories": "Kalori",
+    "serving": "Porsiyon",
+    "prepTime": "Hazırlama Süresi",
+    "nutrition": "Besin Değerleri",
+    "ingredients": "Malzemeler",
+    "instructions": "Hazırlanışı",
+    "minutes": "dakika",
+    "person": "kişi",
+    "kcal": "kcal"
+  },
+  "home": {
+    "title": "Sağlıklı Beslenme, Sürdürülebilir Yaşam",
+    "subtitle": "Diyetisyen Sudenur Özgündöndü ile sağlıklı yaşam yolculuğunuza başlayın",
+    "cta": "Bilgi Al",
+    "services": {
+      "title": "Hizmetlerimiz",
+      "weightControl": {
+        "title": "Kilo Kontrolü",
+        "description": "Kişiye özel beslenme planları ile sağlıklı kilo yönetimi"
+      },
+      "athlete": {
+        "title": "Sporcu Beslenmesi",
+        "description": "Performansınızı artıracak profesyonel beslenme danışmanlığı"
+      },
+      "disease": {
+        "title": "Hastalıklara Özel Beslenme",
+        "description": "Diyabet, hipertansiyon ve diğer hastalıklara uygun beslenme planları"
+      },
+      "online": {
+        "title": "Online Danışmanlık",
+        "description": "Uzaktan erişimle profesyonel beslenme desteği"
+      }
+    },
+    "blog": {
+      "title": "Son Blog Yazıları",
+      "viewAll": "Tümünü Gör"
+    },
+    "recipes": {
+      "title": "Sağlıklı Tarifler",
+      "viewAll": "Tümünü Gör"
+    }
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Beslenme ve sağlık hakkında güncel yazılar",
+    "categories": {
+      "keto": "Ketojenik",
+      "mediterranean": "Akdeniz",
+      "vegetarian": "Vejetaryen",
+      "vegan": "Vegan",
+      "athlete": "Sporcu Beslenmesi"
+    },
+    "back": "Blog'a Dön"
+  },
+  "recipes": {
+    "title": "Sağlıklı Tarifler",
+    "subtitle": "Beslenme planınıza uygun lezzetli tarifler",
+    "back": "Tarifler'e Dön"
+  },
+  "contact": {
+    "title": "İletişim",
+    "subtitle": "Bize ulaşın, sorularınızı yanıtlayalım",
+    "form": {
+      "namePlaceholder": "Adınız Soyadınız",
+      "emailPlaceholder": "E-posta adresiniz",
+      "messagePlaceholder": "Mesajınız",
+      "success": "Mesajınız başarıyla gönderildi!",
+      "error": "Bir hata oluştu. Lütfen tekrar deneyin."
+    },
+    "whatsapp": {
+      "text": "Merhaba, beslenme danışmanlığı hakkında bilgi almak istiyorum."
+    }
+  },
+  "footer": {
+    "rights": "Tüm hakları saklıdır.",
+    "description": "Sağlıklı beslenme ve sürdürülebilir yaşam için yanınızdayız."
+  },
+  "about": {
+    "title": "Hakkımda",
+    "subtitle": "Bilimsel temelli ve sürdürülebilir beslenme yaklaşımıyla danışanlarımın sağlıklı yaşam yolculuğuna eşlik ediyorum.",
+    "education": {
+      "title": "Eğitim",
+      "content": "Tekirdağ Namık Kemal Üniversitesi Beslenme ve Diyetetik Bölümü mezunuyum.",
+      "approach": "Eğitim sürecim boyunca beslenme biliminin etik, kanıta dayalı ve bireysel yaklaşımlarını benimsedim."
+    },
+    "international": {
+      "title": "Uluslararası Deneyim",
+      "content": "İtalya Magna Graecia Üniversitesi'nde 6 ay boyunca laboratuvar çalışmalarında yer alarak beslenme bilimine uluslararası bir perspektiften bakma fırsatı buldum."
+    },
+    "approach": {
+      "title": "Yaklaşımım",
+      "content": "Edindiğim akademik ve uluslararası deneyimleri, kendi ofisimde sizlerle buluşturuyor; kişiye özel, sürdürülebilir ve uygulanabilir beslenme planlarıyla yanınızda oluyorum.",
+      "personalized": "Kişiye Özel",
+      "sustainable": "Sürdürülebilir",
+      "practical": "Uygulanabilir"
+    },
+    "cta": {
+      "text": "Sağlıklı yaşam yolculuğunuza birlikte başlayalım.",
+      "button": "İletişime Geç"
+    }
+  }
+}
+
+
+

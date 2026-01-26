@@ -1,0 +1,93 @@
+import { useTranslations, useLocale } from 'next-intl'
+import Link from 'next/link'
+import { Mail, Phone } from 'lucide-react'
+
+export default function Footer() {
+  const t = useTranslations('footer')
+  const tCommon = useTranslations('common')
+  const locale = useLocale()
+
+  return (
+    <footer className="bg-beige-50 border-t border-beige-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+          {/* About */}
+          <div>
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">
+              Sudenur Özgündöndü
+            </h3>
+            <p className="text-gray-600 text-sm">
+              {t('description')}
+            </p>
+          </div>
+
+          {/* Links */}
+          <div>
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">
+              {tCommon('home')}
+            </h3>
+            <ul className="space-y-2">
+              <li>
+                <Link
+                  href={`/${locale}`}
+                  className="text-gray-600 hover:text-primary-600 text-sm transition-colors"
+                >
+                  {tCommon('home')}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={`/${locale}/blog`}
+                  className="text-gray-600 hover:text-primary-600 text-sm transition-colors"
+                >
+                  {tCommon('blog')}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={`/${locale}/tarifler`}
+                  className="text-gray-600 hover:text-primary-600 text-sm transition-colors"
+                >
+                  {tCommon('recipes')}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={`/${locale}/iletisim`}
+                  className="text-gray-600 hover:text-primary-600 text-sm transition-colors"
+                >
+                  {tCommon('contact')}
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Contact Info */}
+          <div>
+            <h3 className="text-lg font-semibold text-gray-900 mb-4 ">
+              {tCommon('contact')}
+            </h3>
+            <div className="space-y-2 text-sm text-gray-600">
+              <p className="flex items-center space-x-2 justify-center md:justify-start">
+                <Mail size={16} />
+                <span>info@sudenurozgundondu.com</span>
+              </p>
+              <p className="flex items-center space-x-2 justify-center md:justify-start">
+                <Phone size={16} />
+                <span>+90 535 259 96 85</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-8 pt-8 border-t border-beige-200 text-center text-sm text-gray-600">
+          <p>&copy; {new Date().getFullYear()} Sudenur Özgündöndü. {t('rights')}</p>
+        </div>
+      </div>
+    </footer>
+  )
+}
+
+
+
+

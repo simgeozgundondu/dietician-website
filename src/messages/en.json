@@ -1,0 +1,119 @@
+{
+  "common": {
+    "readMore": "Read More",
+    "readTime": "min read",
+    "contact": "Contact",
+    "blog": "Blog",
+    "recipes": "Recipes",
+    "home": "Home",
+    "about": "About",
+    "getInfo": "Get Info",
+    "send": "Send",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "calories": "Calories",
+    "serving": "Serving",
+    "prepTime": "Prep Time",
+    "nutrition": "Nutrition",
+    "ingredients": "Ingredients",
+    "instructions": "Instructions",
+    "minutes": "minutes",
+    "person": "person",
+    "kcal": "kcal"
+  },
+  "home": {
+    "title": "Healthy Nutrition, Sustainable Life",
+    "subtitle": "Start your healthy living journey with Dietician Sudenur Özgündöndü",
+    "cta": "Get Info",
+    "services": {
+      "title": "Our Services",
+      "weightControl": {
+        "title": "Weight Control",
+        "description": "Healthy weight management with personalized nutrition plans"
+      },
+      "athlete": {
+        "title": "Athlete Nutrition",
+        "description": "Professional nutrition counseling to boost your performance"
+      },
+      "disease": {
+        "title": "Disease-Specific Nutrition",
+        "description": "Nutrition plans suitable for diabetes, hypertension and other diseases"
+      },
+      "online": {
+        "title": "Online Consultation",
+        "description": "Professional nutrition support with remote access"
+      }
+    },
+    "blog": {
+      "title": "Latest Blog Posts",
+      "viewAll": "View All"
+    },
+    "recipes": {
+      "title": "Healthy Recipes",
+      "viewAll": "View All"
+    }
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Current articles about nutrition and health",
+    "categories": {
+      "keto": "Ketogenic",
+      "mediterranean": "Mediterranean",
+      "vegetarian": "Vegetarian",
+      "vegan": "Vegan",
+      "athlete": "Athlete Nutrition"
+    },
+    "back": "Back to Blog"
+  },
+  "recipes": {
+    "title": "Healthy Recipes",
+    "subtitle": "Delicious recipes suitable for your nutrition plan",
+    "back": "Back to Recipes"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Reach out to us, let us answer your questions",
+    "form": {
+      "namePlaceholder": "Your Full Name",
+      "emailPlaceholder": "Your email address",
+      "messagePlaceholder": "Your message",
+      "success": "Your message has been sent successfully!",
+      "error": "An error occurred. Please try again."
+    },
+    "whatsapp": {
+      "text": "Hello, I would like to get information about nutrition counseling."
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "description": "We are with you for healthy nutrition and sustainable living."
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "I accompany my clients on their healthy living journey with a science-based and sustainable nutrition approach.",
+    "education": {
+      "title": "Education",
+      "content": "I am a graduate of Tekirdağ Namık Kemal University, Department of Nutrition and Dietetics.",
+      "approach": "Throughout my education, I have embraced ethical, evidence-based, and individualized approaches in nutrition science."
+    },
+    "international": {
+      "title": "International Experience",
+      "content": "I had the opportunity to view nutrition science from an international perspective by participating in laboratory work at Magna Graecia University in Italy for 6 months."
+    },
+    "approach": {
+      "title": "My Approach",
+      "content": "I bring together the academic and international experiences I have gained in my own office; I am here for you with personalized, sustainable, and practical nutrition plans.",
+      "personalized": "Personalized",
+      "sustainable": "Sustainable",
+      "practical": "Practical"
+    },
+    "cta": {
+      "text": "Let's start your healthy living journey together.",
+      "button": "Get in Touch"
+    }
+  }
+}
+
+
+
