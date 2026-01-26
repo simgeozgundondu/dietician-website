@@ -1,5 +1,6 @@
 import { getTranslations } from 'next-intl/server'
 import { recipes } from '@/lib/data/recipes'
+import { getRecipeBySlug } from '@/lib/data/recipes'
 import RecipeCard from '@/components/recipes/RecipeCard'
 
 export const metadata = {
@@ -7,7 +8,8 @@ export const metadata = {
   description: 'Beslenme planınıza uygun lezzetli tarifler',
 }
 
-export default async function RecipesPage() {
+export default async function RecipesPage({ params }) {
+  const { locale } = await params
   const t = await getTranslations('recipes')
 
   return (
@@ -23,9 +25,10 @@ export default async function RecipesPage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {recipes.map((recipe) => (
-            <RecipeCard key={recipe.id} recipe={recipe} />
-          ))}
+          {recipes.map((recipe) => {
+            const localizedRecipe = getRecipeBySlug(recipe.slug, locale)
+            return <RecipeCard key={recipe.id} recipe={localizedRecipe} />
+          })}
         </div>
       </div>
     </div>

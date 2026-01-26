@@ -1,7 +1,6 @@
 'use client'
 
 import { useTranslations, useLocale } from 'next-intl'
-import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import Image from 'next/image'
@@ -11,7 +10,10 @@ import mainIcon from '@/images/main-icon.png'
 
 export default function Hero() {
   const t = useTranslations('home')
+  const tWhatsApp = useTranslations('contact.whatsapp')
   const locale = useLocale()
+  const phoneNumber = '905352599685'
+  const message = encodeURIComponent(tWhatsApp('text'))
 
   return (
     <section className="relative min-h-screen bg-beige-50 overflow-hidden flex items-center -mt-20 pt-20">
@@ -45,7 +47,7 @@ export default function Hero() {
       </div>
 
       {/* İçerik */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
+      <div className="relative z-10 w-full max-w-7xl lg:ml-20 sm:mx-auto px-6 sm:px-8 lg:px-12 text-center">
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center min-h-[80vh] py-20">
           {/* Sol taraf – metin */}
           <motion.div
@@ -102,13 +104,15 @@ export default function Hero() {
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
             >
-              <Link
-                href={`/${locale}/iletisim`}
+              <a
+                href={`https://wa.me/${phoneNumber}?text=${message}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-primary-500 hover:bg-primary-600 text-white px-10 py-5 rounded-full text-lg font-medium shadow-md hover:shadow-lg transition-all"
               >
                 {t('cta')}
                 <ArrowRight size={20} />
-              </Link>
+              </a>
             </motion.div>
           </motion.div>
 

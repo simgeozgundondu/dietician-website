@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 import { getTranslations } from 'next-intl/server'
 import { getRecipeBySlug, recipes } from '@/lib/data/recipes'
-import { Clock, Users, ArrowLeft, UtensilsCrossed } from 'lucide-react'
+import { Clock, Users, ArrowLeft, UtensilsCrossed, Instagram } from 'lucide-react'
 import Link from 'next/link'
 
 export async function generateStaticParams() {
@@ -11,8 +11,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }) {
-  const { slug } = await params
-  const recipe = getRecipeBySlug(slug)
+  const { slug, locale } = await params
+  const recipe = getRecipeBySlug(slug, locale)
 
   if (!recipe) {
     return {
@@ -28,7 +28,7 @@ export async function generateMetadata({ params }) {
 
 export default async function RecipePage({ params }) {
   const { slug, locale } = await params
-  const recipe = getRecipeBySlug(slug)
+  const recipe = getRecipeBySlug(slug, locale)
 
   if (!recipe) {
     notFound()
@@ -79,6 +79,19 @@ export default async function RecipePage({ params }) {
             alt={recipe.title}
             className="w-full h-[400px] object-cover"
           />
+          {recipe.instagramReelLink && (
+            <div className="absolute top-4 right-4">
+              <a
+                href={recipe.instagramReelLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-[#E4405F] hover:bg-[#C13584] text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg transition-colors"
+              >
+                <Instagram size={18} />
+                <span>{tRecipes('watchReelOnInstagram')}</span>
+              </a>
+            </div>
+          )}
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
@@ -89,19 +102,19 @@ export default async function RecipePage({ params }) {
             </h2>
             <div className="space-y-3">
               <div className="flex justify-between">
-                <span className="text-gray-600">Protein</span>
+                <span className="text-gray-600">{t('protein')}</span>
                 <span className="font-semibold">{recipe.nutrition.protein}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-gray-600">Karbonhidrat</span>
+                <span className="text-gray-600">{t('carbs')}</span>
                 <span className="font-semibold">{recipe.nutrition.carbs}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-gray-600">Yağ</span>
+                <span className="text-gray-600">{t('fat')}</span>
                 <span className="font-semibold">{recipe.nutrition.fat}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-gray-600">Lif</span>
+                <span className="text-gray-600">{t('fiber')}</span>
                 <span className="font-semibold">{recipe.nutrition.fiber}</span>
               </div>
             </div>

@@ -1,10 +1,11 @@
 import { useTranslations, useLocale } from 'next-intl'
 import Link from 'next/link'
-import { Mail, Phone } from 'lucide-react'
+import { Mail, Phone, Clock } from 'lucide-react'
 
 export default function Footer() {
   const t = useTranslations('footer')
   const tCommon = useTranslations('common')
+  const tContact = useTranslations('contact')
   const locale = useLocale()
 
   return (
@@ -16,9 +17,12 @@ export default function Footer() {
             <h3 className="text-lg font-semibold text-gray-900 mb-4">
               Sudenur Özgündöndü
             </h3>
-            <p className="text-gray-600 text-sm">
-              {t('description')}
-            </p>
+            <div className="text-gray-600 text-sm space-y-1">
+              <p className="font-medium mb-2">{tContact('workingHours.title')}</p>
+              <p>{tContact('workingHours.weekdays')}: {tContact('workingHours.weekdaysTime')}</p>
+              <p>{tContact('workingHours.saturday')}: {tContact('workingHours.saturdayTime')}</p>
+              <p className="text-gray-500">{tContact('workingHours.sunday')}: {tContact('workingHours.sundayTime')}</p>
+            </div>
           </div>
 
           {/* Links */}
@@ -70,7 +74,7 @@ export default function Footer() {
             <div className="space-y-2 text-sm text-gray-600">
               <p className="flex items-center space-x-2 justify-center md:justify-start">
                 <Mail size={16} />
-                <span>info@sudenurozgundondu.com</span>
+                <span>sudenurozgndndu48@gmail.com</span>
               </p>
               <p className="flex items-center space-x-2 justify-center md:justify-start">
                 <Phone size={16} />

@@ -20,7 +20,11 @@
     "instructions": "Hazırlanışı",
     "minutes": "dakika",
     "person": "kişi",
-    "kcal": "kcal"
+    "kcal": "kcal",
+    "protein": "Protein",
+    "carbs": "Karbonhidrat",
+    "fat": "Yağ",
+    "fiber": "Lif"
   },
   "home": {
     "title": "Sağlıklı Beslenme, Sürdürülebilir Yaşam",
@@ -69,7 +73,9 @@
   "recipes": {
     "title": "Sağlıklı Tarifler",
     "subtitle": "Beslenme planınıza uygun lezzetli tarifler",
-    "back": "Tarifler'e Dön"
+    "back": "Tarifler'e Dön",
+    "watchReel": "Instagram'da İzle",
+    "watchReelOnInstagram": "Instagram'da Reel'i İzle"
   },
   "contact": {
     "title": "İletişim",
@@ -83,6 +89,16 @@
     },
     "whatsapp": {
       "text": "Merhaba, beslenme danışmanlığı hakkında bilgi almak istiyorum."
+    },
+    "ctaButton": "İletişime Geç",
+    "workingHours": {
+      "title": "Çalışma Saatleri",
+      "weekdays": "Hafta İçi",
+      "weekdaysTime": "09:30 - 19:00",
+      "saturday": "Cumartesi",
+      "saturdayTime": "09:30 - 19:00",
+      "sunday": "Pazar",
+      "sundayTime": "Kapalı"
     }
   },
   "footer": {

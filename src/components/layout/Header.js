@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { useTranslations, useLocale } from 'next-intl'
+import { useRouter, usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
@@ -11,6 +12,9 @@ import mainIcon from '@/images/main-icon.png'
 export default function Header() {
   const t = useTranslations('common')
   const locale = useLocale()
+  const router = useRouter()
+  const pathname = usePathname()
+
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   const navItems = [
@@ -21,16 +25,27 @@ export default function Header() {
     { href: `/${locale}/iletisim`, label: t('contact') },
   ]
 
+  const changeLocale = (newLocale) => {
+    const segments = pathname.split('/')
+    segments[1] = newLocale
+    router.push(segments.join('/'))
+    setMobileMenuOpen(false)
+  }
+
   return (
-    <header className="bg-transparent shadow-sm sticky top-0 z-50 backdrop-blur-sm bg-beige50">
+    <header className="sticky top-0 z-50 backdrop-blur-sm bg-beige50 shadow-sm">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-
           <Link href={`/${locale}`} className="flex items-center space-x-2">
-            <Image src={mainIcon} alt="Sudenur Özgündöndü" width={48} height={48} />
+            <Image
+              src={mainIcon}
+              alt="Sudenur Özgündöndü"
+              width={48}
+              height={48}
+            />
             <span className="text-2xl font-bold text-primary-600">
-              Dyt.Sudenur Özgündöndü
+              Dyt. Sudenur Özgündöndü
             </span>
           </Link>
 
@@ -45,9 +60,19 @@ export default function Header() {
                 {item.label}
               </Link>
             ))}
+
+            {/* Language Select */}
+            <select
+              value={locale}
+              onChange={(e) => changeLocale(e.target.value)}
+              className="bg-transparent border border-gray-300 rounded-md px-2 py-1 text-sm cursor-pointer focus:outline-none focus:ring-1 focus:ring-primary-500"
+            >
+              <option value="tr">TR</option>
+              <option value="en">EN</option>
+            </select>
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile Menu Button */}
           <button
             className="md:hidden p-2 text-gray-700"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -66,7 +91,7 @@ export default function Header() {
               exit={{ opacity: 0, height: 0 }}
               className="md:hidden pb-4"
             >
-              <div className="flex flex-col space-y-4 pt-4">
+              <div className="flex flex-col items-center space-y-4 pt-4">
                 {navItems.map((item) => (
                   <Link
                     key={item.href}
@@ -77,6 +102,18 @@ export default function Header() {
                     {item.label}
                   </Link>
                 ))}
+
+                {/* Mobile Language Select */}
+                <div>
+                  <select
+                    value={locale}
+                    onChange={(e) => changeLocale(e.target.value)}
+                    className=" bg-transparent border border-gray-300 rounded-md px-3 py-2 text-sm"
+                  >
+                    <option value="tr">Türkçe</option>
+                    <option value="en">English</option>
+                  </select>
+                </div>
               </div>
             </motion.div>
           )}
@@ -85,6 +122,3 @@ export default function Header() {
     </header>
   )
 }
-
-
-

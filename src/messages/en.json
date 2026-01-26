@@ -20,7 +20,11 @@
     "instructions": "Instructions",
     "minutes": "minutes",
     "person": "person",
-    "kcal": "kcal"
+    "kcal": "kcal",
+    "protein": "Protein",
+    "carbs": "Carbohydrates",
+    "fat": "Fat",
+    "fiber": "Fiber"
   },
   "home": {
     "title": "Healthy Nutrition, Sustainable Life",
@@ -69,7 +73,9 @@
   "recipes": {
     "title": "Healthy Recipes",
     "subtitle": "Delicious recipes suitable for your nutrition plan",
-    "back": "Back to Recipes"
+    "back": "Back to Recipes",
+    "watchReel": "Watch on Instagram",
+    "watchReelOnInstagram": "Watch Reel on Instagram"
   },
   "contact": {
     "title": "Contact",
@@ -83,6 +89,16 @@
     },
     "whatsapp": {
       "text": "Hello, I would like to get information about nutrition counseling."
+    },
+    "ctaButton": "Get in Touch",
+    "workingHours": {
+      "title": "Working Hours",
+      "weekdays": "Weekdays",
+      "weekdaysTime": "09:30 - 19:00",
+      "saturday": "Saturday",
+      "saturdayTime": "09:30 - 19:00",
+      "sunday": "Sunday",
+      "sundayTime": "Closed"
     }
   },
   "footer": {

@@ -12,8 +12,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }) {
-  const { slug } = await params
-  const post = getBlogPostBySlug(slug)
+  const { slug, locale } = await params
+  const post = getBlogPostBySlug(slug, locale)
 
   if (!post) {
     return {
@@ -29,7 +29,7 @@ export async function generateMetadata({ params }) {
 
 export default async function BlogPostPage({ params }) {
   const { slug, locale } = await params
-  const post = getBlogPostBySlug(slug)
+  const post = getBlogPostBySlug(slug, locale)
 
   if (!post) {
     notFound()
@@ -52,7 +52,7 @@ export default async function BlogPostPage({ params }) {
         <div className="mb-8">
           <div className="flex items-center justify-between mb-4">
             <span className="text-sm font-semibold text-primary-600 uppercase">
-              {post.category}
+              {tBlog(`categories.${post.category}`)}
             </span>
             <div className="flex items-center space-x-1 text-gray-500 text-sm">
               <Clock size={16} />

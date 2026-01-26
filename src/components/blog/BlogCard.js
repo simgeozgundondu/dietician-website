@@ -9,6 +9,7 @@ import { useTranslations } from 'next-intl'
 export default function BlogCard({ post }) {
   const locale = useLocale()
   const t = useTranslations('common')
+  const tBlog = useTranslations('blog')
 
   return (
     <motion.article
@@ -29,7 +30,7 @@ export default function BlogCard({ post }) {
         <div className="p-6">
           <div className="flex items-center justify-between mb-3">
             <span className="text-xs font-semibold text-primary-600 uppercase">
-              {post.category}
+              {tBlog(`categories.${post.category}`)}
             </span>
             <div className="flex items-center space-x-1 text-gray-500 text-sm">
               <Clock size={14} />

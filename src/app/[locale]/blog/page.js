@@ -1,5 +1,6 @@
 import { getTranslations } from 'next-intl/server'
 import { blogPosts } from '@/lib/data/blog'
+import { getBlogPostBySlug } from '@/lib/data/blog'
 import BlogCard from '@/components/blog/BlogCard'
 
 export const metadata = {
@@ -7,7 +8,8 @@ export const metadata = {
   description: 'Beslenme ve sağlık hakkında güncel yazılar',
 }
 
-export default async function BlogPage() {
+export default async function BlogPage({ params }) {
+  const { locale } = await params
   const t = await getTranslations('blog')
 
   return (
@@ -23,9 +25,10 @@ export default async function BlogPage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogPosts.map((post) => (
-            <BlogCard key={post.id} post={post} />
-          ))}
+          {blogPosts.map((post) => {
+            const localizedPost = getBlogPostBySlug(post.slug, locale)
+            return <BlogCard key={post.id} post={localizedPost} />
+          })}
         </div>
       </div>
     </div>
