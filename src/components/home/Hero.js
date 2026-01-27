@@ -44,7 +44,7 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 w-full max-w-7xl sm:mx-auto px-6 sm:px-8 lg:px-12 text-center">
+        <div className="relative z-10 w-full max-w-7xl lg:ml-20 sm:mx-auto px-6 sm:px-8 lg:px-12 text-center">
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center min-h-[80vh] sm:py-20">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
