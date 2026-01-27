@@ -62,7 +62,7 @@ export default function Services() {
                 className="bg-beige-50 rounded-xl p-8 shadow-sm hover:shadow-lg transition-shadow border border-beige-100"
               >
                 <div className="bg-primary-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
-                  <Icon className="text-primary-600" size={32} />
+                  <Icon className="text-primary-700" size={32} />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">
                   {t(`${service.key}.title`)}

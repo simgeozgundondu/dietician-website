@@ -1,6 +1,6 @@
 import { useTranslations, useLocale } from 'next-intl'
 import Link from 'next/link'
-import { Mail, Phone, Clock } from 'lucide-react'
+import { Mail, Phone, MapPin ,Instagram} from 'lucide-react'
 
 export default function Footer() {
   const t = useTranslations('footer')
@@ -78,8 +78,24 @@ export default function Footer() {
               </p>
               <p className="flex items-center space-x-2 justify-center md:justify-start">
                 <Phone size={16} />
-                <span>+90 535 259 96 85</span>
+                <a href="tel:+905352599685" className='underline hover:text-primary-600'>+90 535 259 96 85</a>
               </p>
+              <p className="flex items-center space-x-2 justify-center md:justify-start">
+              <MapPin size={16} />
+              <a
+                href="https://www.google.com/maps?q=Kurtuluş+Mah,+Hüseyin+Tümer+Cd+No:50/1,+Gönen+Balıkesir+Türkiye"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline text-gray-600 hover:text-primary-600 transition-colors"
+              >
+                Kurtuluş Mah., Hüseyin Tümer Cd. No:50/1 <br /> Gönen, Balıkesir, Türkiye
+              </a>
+            </p>
+            <p className="flex items-center space-x-2 justify-center md:justify-start">
+                <Instagram size={16} />
+                <a href="https://www.instagram.com/dytsudenurozgundondu.gonen/" className='underline hover:text-primary-600'>@dytsudenurozgundondu.gonen</a>
+              </p>
+
             </div>
           </div>
         </div>

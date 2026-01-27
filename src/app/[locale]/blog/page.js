@@ -4,8 +4,9 @@ import { getBlogPostBySlug } from '@/lib/data/blog'
 import BlogCard from '@/components/blog/BlogCard'
 
 export const metadata = {
-  title: 'Blog - Dyt.Sudenur Özgündöndü',
-  description: 'Beslenme ve sağlık hakkında güncel yazılar',
+  title: 'Diyetisyen Sudenur Özgündöndü - Gönen/BALIKESİR',
+  description: 'Gönen’de diyetisyen arayanlar için Diyetisyen Sudenur Özgündöndü, en iyi diyet hizmetleri sunar. Kilo kontrolü ve sağlıklı beslenme danışmanlığı için bizi tercih edin.',
+  keywords:'gönen diyetisyen,gönen alo diyetisyen,gönen en iyi diyetisyen,diyetisyen sudenur özgündöndü'
 }
 
 export default async function BlogPage({ params }) {

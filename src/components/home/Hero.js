@@ -2,7 +2,7 @@
 
 import { useTranslations, useLocale } from 'next-intl'
 import { motion } from 'framer-motion'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Instagram } from 'lucide-react'
 import Image from 'next/image'
 
 import heroImage from '@/images/hero-image.png'
@@ -16,16 +16,14 @@ export default function Hero() {
   const message = encodeURIComponent(tWhatsApp('text'))
 
   return (
-    <section className="relative min-h-screen bg-beige-50 overflow-hidden flex items-center -mt-20 pt-20">
-      {/* Sağ taraf pastel pembe diyagonal arka plan */}
+    <section className="relative min-h-screen bg-beige-50 overflow-hidden flex flex-col items-center -mt-20 pt-20">
+      {/* Desktop Background Shapes */}
       <div
         className="absolute inset-0 bg-primary-100 hidden lg:block"
         style={{
           clipPath: 'polygon(65% 0, 100% 0, 100% 100%, 45% 100%)',
         }}
       />
-
-      {/* Sağ taraf görsel */}
       <div className="absolute inset-y-0 right-0 w-full lg:w-[46%] pointer-events-none opacity-50 hidden lg:block">
         <div
           className="absolute inset-0"
@@ -41,22 +39,20 @@ export default function Hero() {
             className="object-cover"
             style={{ objectPosition: 'center top' }}
           />
-          {/* Hafif soft overlay */}
           <div className="absolute inset-0 bg-white/10" />
         </div>
       </div>
 
-      {/* İçerik */}
-      <div className="relative z-10 w-full max-w-7xl lg:ml-20 sm:mx-auto px-6 sm:px-8 lg:px-12 text-center">
-        <div className="grid grid-cols-1 lg:grid-cols-2 items-center min-h-[80vh] py-20">
-          {/* Sol taraf – metin */}
+      {/* Content */}
+      <div className="relative z-10 w-full max-w-7xl sm:mx-auto px-6 sm:px-8 lg:px-12 text-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 items-center min-h-[80vh] sm:py-20">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
             className="relative z-10 lg:pl-6"
           >
-            {/* Logo */}
+            {/* Main Icon */}
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -76,7 +72,7 @@ export default function Hero() {
               />
             </motion.div>
 
-            {/* Başlık */}
+            {/* Hero Title */}
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -86,7 +82,7 @@ export default function Hero() {
               {t('title')}
             </motion.h1>
 
-            {/* Alt başlık */}
+            {/* Subtitle */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -96,19 +92,35 @@ export default function Hero() {
               {t('subtitle')}
             </motion.p>
 
-            {/* CTA */}
+            {/* CTA Buttons */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
+              className="flex items-center justify-center gap-4"
             >
+              {/* Instagram Icon */}
+              <motion.a
+                href="https://www.instagram.com/dytsudenurozgundondu.gonen/"
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ y: 0, scale: 1, opacity: 0 }}
+                animate={{ y: [0, -3, 0], scale: 1, opacity: 1 }}
+                transition={{ duration: 1.5, repeat: Infinity, repeatDelay: 2 }}
+                whileHover={{ scale: 1.2 }}
+                className="w-12 h-12 bg-primary-600 rounded-full flex items-center justify-center shadow-lg cursor-pointer"
+              >
+                <Instagram size={24} className="text-white" />
+              </motion.a>
+
+              {/* WhatsApp CTA */}
               <a
                 href={`https://wa.me/${phoneNumber}?text=${message}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-primary-500 hover:bg-primary-600 text-white px-10 py-5 rounded-full text-lg font-medium shadow-md hover:shadow-lg transition-all"
+                className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-600 text-white px-10 py-5 rounded-full text-lg font-medium shadow-md hover:shadow-lg transition-all"
               >
                 {t('cta')}
                 <ArrowRight size={20} />
@@ -116,8 +128,20 @@ export default function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* Sağ boş kolon (sadece layout için) */}
+          {/* Desktop Spacer */}
           <div className="hidden lg:block" />
+        </div>
+
+        {/* Mobile Hero Image Card */}
+        <div className=" w-full mb-4 lg:hidden flex justify-center">
+          <div className="relative w-full max-w-sm shadow-xl rounded-xl overflow-hidden">
+            <Image
+              src={heroImage}
+              alt="Gönen Diyetisyen Sudenur Özgündöndü"
+            
+              className="object-cover"
+            />
+          </div>
         </div>
       </div>
     </section>

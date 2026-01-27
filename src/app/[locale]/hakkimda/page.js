@@ -16,12 +16,9 @@ export default async function AboutPage({ params }) {
     <div className=" min-h-screen bg-gradient-to-br from-beige-50 via-white to-primary-50">
 
 
-      {/* Main Content */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Üst Satır: Eğitim ve Uluslararası Deneyim */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-            {/* Education Section */}
             <div className="bg-beige-50 rounded-2xl p-8">
               <div className="flex items-start space-x-4 mb-6">
                 <div className="bg-primary-100 rounded-full p-3 flex-shrink-0">
@@ -55,9 +52,7 @@ export default async function AboutPage({ params }) {
             </div>
           </div>
 
-          {/* Alt Satır: Yaklaşımım ve CTA */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Approach Section */}
             <div className="bg-beige-50 rounded-2xl p-8">
               <div className="flex items-start space-x-4 mb-6">
                 <div className="bg-primary-100 rounded-full p-3 flex-shrink-0">

@@ -21,8 +21,9 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }) {
   return {
-    title: 'Diyetisyen-Sudenur Özgündöndü',
-    description: 'Sağlıklı beslenme ve sürdürülebilir yaşam için profesyonel diyetisyen danışmanlığı',
+    title: 'Diyetisyen Sudenur Özgündöndü - Gönen/BALIKESİR',
+    description: 'Gönen’de diyetisyen arayanlar için Diyetisyen Sudenur Özgündöndü, en iyi diyet hizmetleri sunar. Kilo kontrolü ve sağlıklı beslenme danışmanlığı için bizi tercih edin.',
+    keywords:'gönen diyetisyen,gönen alo diyetisyen,gönen en iyi diyetisyen, diyetisyen sudenur özgündöndü'
   }
 }
 

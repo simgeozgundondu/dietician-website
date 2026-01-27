@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 
 export default function WhatsAppButton() {
   const t = useTranslations('contact.whatsapp')
-  const phoneNumber = '905352599685' // Bu numarayı gerçek numara ile değiştirin
+  const phoneNumber = '905352599685'
   const message = encodeURIComponent(t('text'))
 
   return (

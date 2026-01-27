@@ -24,7 +24,8 @@
     "protein": "Protein",
     "carbs": "Carbohydrates",
     "fat": "Fat",
-    "fiber": "Fiber"
+    "fiber": "Fiber",
+    "dietician": "Dietician"
   },
   "home": {
     "title": "Healthy Nutrition, Sustainable Life",
@@ -96,7 +97,7 @@
       "weekdays": "Weekdays",
       "weekdaysTime": "09:30 - 19:00",
       "saturday": "Saturday",
-      "saturdayTime": "09:30 - 19:00",
+      "saturdayTime": "09:30 - 15:00",
       "sunday": "Sunday",
       "sundayTime": "Closed"
     }

@@ -54,10 +54,7 @@ export default function ContactForm() {
     setIsSubmitting(true)
     setSubmitStatus(null)
 
-    // Simüle edilmiş form gönderimi
-    // Gerçek uygulamada burada API çağrısı yapılır
     setTimeout(() => {
-      // WhatsApp'a yönlendirme veya email gönderme
       const whatsappMessage = encodeURIComponent(
         `Merhaba, ben ${formData.name}. ${formData.message}`
       )
@@ -76,7 +73,6 @@ export default function ContactForm() {
   const handleChange = (e) => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
-    // Clear error when user starts typing
     if (errors[name]) {
       setErrors((prev) => ({ ...prev, [name]: '' }))
     }
@@ -89,7 +85,6 @@ export default function ContactForm() {
       className="bg-white rounded-xl shadow-sm border border-beige-100 p-8"
     >
       <form onSubmit={handleSubmit} className="space-y-6">
-        {/* Name */}
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
             {tCommon('name')}

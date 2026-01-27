@@ -24,7 +24,8 @@
     "protein": "Protein",
     "carbs": "Karbonhidrat",
     "fat": "Yağ",
-    "fiber": "Lif"
+    "fiber": "Lif",
+    "dietician": "Diyetisyen"
   },
   "home": {
     "title": "Sağlıklı Beslenme, Sürdürülebilir Yaşam",
@@ -96,7 +97,7 @@
       "weekdays": "Hafta İçi",
       "weekdaysTime": "09:30 - 19:00",
       "saturday": "Cumartesi",
-      "saturdayTime": "09:30 - 19:00",
+      "saturdayTime": "09:30 - 15:00",
       "sunday": "Pazar",
       "sundayTime": "Kapalı"
     }
@@ -105,6 +106,7 @@
     "rights": "Tüm hakları saklıdır.",
     "description": "Sağlıklı beslenme ve sürdürülebilir yaşam için yanınızdayız."
   },
+
   "about": {
     "title": "Hakkımda",
     "subtitle": "Bilimsel temelli ve sürdürülebilir beslenme yaklaşımıyla danışanlarımın sağlıklı yaşam yolculuğuna eşlik ediyorum.",
@@ -128,6 +130,7 @@
       "text": "Sağlıklı yaşam yolculuğunuza birlikte başlayalım.",
       "button": "İletişime Geç"
     }
+
   }
 }
 

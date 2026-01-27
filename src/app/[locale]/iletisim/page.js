@@ -1,12 +1,12 @@
 import { getTranslations } from 'next-intl/server'
-import { Mail, Phone, MapPin, Clock } from 'lucide-react'
+import { Mail, Phone, MapPin, Clock ,Instagram} from 'lucide-react'
 import ContactCTA from '@/components/contact/ContactCTA'
 
 export const metadata = {
-  title: 'İletişim - Dyt.Sudenur Özgündöndü',
-  description: 'Bize ulaşın, sorularınızı yanıtlayalım',
+  title: 'Diyetisyen Sudenur Özgündöndü - Gönen/BALIKESİR',
+  description: 'Gönen’de diyetisyen arayanlar için Diyetisyen Sudenur Özgündöndü, en iyi diyet hizmetleri sunar. Kilo kontrolü ve sağlıklı beslenme danışmanlığı için bizi tercih edin.',
+  keywords:'gönen diyetisyen,gönen alo diyetisyen,gönen en iyi diyetisyen,diyetisyen sudenur özgündöndü'
 }
-
 export default async function ContactPage() {
   const t = await getTranslations('contact')
 
@@ -25,16 +25,16 @@ export default async function ContactPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {/* Contact Info */}
           <a
-            href="mailto:sudenurozgndndu48@gmail.com"
+            href='href="https://www.instagram.com/dytsudenurozgundondu.gonen/"'
             className="bg-beige-50 rounded-xl p-6 block hover:bg-beige-100 transition-colors cursor-pointer group"
           >
             <div className="flex items-start space-x-4">
               <div className="bg-primary-100 group-hover:bg-primary-200 rounded-full p-3 transition-colors">
-                <Mail className="text-primary-600" size={24} />
+                <Instagram className="text-primary-600" size={24} />
               </div>
               <div>
-                <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
-                <p className="text-gray-600 group-hover:text-primary-600 transition-colors">sudenurozgndndu48@gmail.com</p>
+                <h3 className="font-semibold text-gray-900 mb-1">Instagram</h3>
+                <p  className="text-gray-600 group-hover:text-primary-600 transition-colors">@dytsudenurozgundondu.gonen</p>
               </div>
             </div>
           </a>
@@ -54,17 +54,25 @@ export default async function ContactPage() {
             </div>
           </a>
 
-          <div className="bg-beige-50 rounded-xl p-6">
+          <a
+            href="https://www.google.com/maps?q=Kurtuluş+Mah,+Hüseyin+Tümer+Cd+No:50/1,+Gönen+Balıkesir+Türkiye"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-beige-50 rounded-xl p-6 block hover:bg-beige-100 transition-colors cursor-pointer"
+          >
             <div className="flex items-start space-x-4">
               <div className="bg-primary-100 rounded-full p-3">
                 <MapPin className="text-primary-600" size={24} />
               </div>
               <div>
                 <h3 className="font-semibold text-gray-900 mb-1">Adres</h3>
-                <p className="text-gray-600">Kurtuluş Mah., Hüseyin Tümer Cd. No:50/1 <br /> Gönen,Balıkesir,Türkiye</p>
+                <p className="text-gray-600   hover:text-primary-600">
+                  Kurtuluş Mah., Hüseyin Tümer Cd. No:50/1 <br /> Gönen, Balıkesir, Türkiye
+                </p>
               </div>
             </div>
-          </div>
+          </a>
+
 
           {/* Working Hours */}
           <div className="bg-beige-50 rounded-xl p-6">

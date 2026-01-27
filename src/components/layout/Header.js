@@ -17,7 +17,7 @@ export default function Header() {
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
-  const navItems = [
+  const navItems = [/*  */
     { href: `/${locale}`, label: t('home') },
     { href: `/${locale}/hakkimda`, label: t('about') },
     { href: `/${locale}/blog`, label: t('blog') },
@@ -44,9 +44,11 @@ export default function Header() {
               width={48}
               height={48}
             />
-            <span className="text-2xl font-bold text-primary-600">
-              Dyt. Sudenur Özgündöndü
+            <span className="text-md sm:text-2xl font-bold text-primary-600">
+               {t('dietician')} <br className="block sm:hidden" />
+              Sudenur Özgündöndü
             </span>
+
           </Link>
 
           {/* Desktop Navigation */}
