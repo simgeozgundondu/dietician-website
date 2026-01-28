@@ -11,13 +11,10 @@ export default async function ContactPage() {
   const t = await getTranslations('contact')
 
   return (
-    <div className="bg-white min-h-screen py-20">
+    <div className="bg-white min-h-screen py-8 md:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            {t('title')}
-          </h1>
-          <p className="text-xl text-gray-600">
+        <div className="text-center mb-8 sm:mb-16">
+          <p className="text-2xl sm:text-3xl text-gray-700 font-meira">
             {t('subtitle')}
           </p>
         </div>

@@ -1,6 +1,5 @@
 'use client'
-
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useTranslations, useLocale } from 'next-intl'
 import { useRouter, usePathname } from 'next/navigation'
@@ -14,10 +13,21 @@ export default function Header() {
   const locale = useLocale()
   const router = useRouter()
   const pathname = usePathname()
-
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
-  const navItems = [/*  */
+  // Mobil menü açıkken scroll'u engelle
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
+  }, [mobileMenuOpen])
+
+  const navItems = [
     { href: `/${locale}`, label: t('home') },
     { href: `/${locale}/hakkimda`, label: t('about') },
     { href: `/${locale}/blog`, label: t('blog') },
@@ -33,94 +43,93 @@ export default function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-50 backdrop-blur-sm bg-beige50 shadow-sm">
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
-          {/* Logo */}
-          <Link href={`/${locale}`} className="flex items-center space-x-2">
-            <Image
-              src={mainIcon}
-              alt="Sudenur Özgündöndü"
-              width={48}
-              height={48}
-            />
-            <span className="text-md sm:text-2xl font-bold text-primary-600">
-               {t('dietician')} <br className="block sm:hidden" />
-              Sudenur Özgündöndü
-            </span>
+    <>
+      <header className="sticky top-0 z-50 bg-beige50 backdrop-blur-sm shadow-sm">
+        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-20">
+            {/* Logo */}
+            <Link href={`/${locale}`} className="flex items-center space-x-2">
+              <Image src={mainIcon} alt="Sudenur Özgündöndü" width={48} height={48} />
+              <span className="text-md sm:text-xl lg:text-2xl font-bold text-primary-600">
+                {t('dietician')}
+                <br className="block sm:hidden" /> Sudenur Özgündöndü
+              </span>
+            </Link>
 
-          </Link>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="text-gray-700 hover:text-primary-600 transition-colors font-medium"
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center space-x-8">
+              {navItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="text-gray-700 hover:text-primary-600 transition-colors font-medium"
+                >
+                  {item.label}
+                </Link>
+              ))}
+              {/* Language Select */}
+              <select
+                value={locale}
+                onChange={(e) => changeLocale(e.target.value)}
+                className="bg-transparent border border-gray-300 rounded-md px-2 py-1 text-sm cursor-pointer focus:outline-none focus:ring-1 focus:ring-primary-500"
               >
-                {item.label}
-              </Link>
-            ))}
+                <option value="tr">TR</option>
+                <option value="en">EN</option>
+              </select>
+            </div>
 
-            {/* Language Select */}
-            <select
-              value={locale}
-              onChange={(e) => changeLocale(e.target.value)}
-              className="bg-transparent border border-gray-300 rounded-md px-2 py-1 text-sm cursor-pointer focus:outline-none focus:ring-1 focus:ring-primary-500"
+            {/* Mobile Menu Button */}
+            <button
+              className="md:hidden p-2 text-gray-700 relative z-50"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Toggle menu"
             >
-              <option value="tr">TR</option>
-              <option value="en">EN</option>
-            </select>
+              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
           </div>
+        </nav>
+      </header>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2 text-gray-700"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle menu"
+      {/* Mobile Navigation - Full Screen Overlay */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, x: '100%' }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: '100%' }}
+            transition={{ type: 'tween', duration: 0.3 }}
+            className="font-meira fixed inset-0 z-40 md:hidden bg-beige-50"
           >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
-
-        {/* Mobile Navigation */}
-        <AnimatePresence>
-          {mobileMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              className="md:hidden pb-4"
-            >
-              <div className="flex flex-col items-center space-y-4 pt-4">
-                {navItems.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className="text-gray-700 hover:text-primary-600 transition-colors font-medium py-2"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-
-                {/* Mobile Language Select */}
-                <div>
-                  <select
-                    value={locale}
-                    onChange={(e) => changeLocale(e.target.value)}
-                    className=" bg-transparent border border-gray-300 rounded-md px-3 py-2 text-sm"
-                  >
-                    <option value="tr">Türkçe</option>
-                    <option value="en">English</option>
-                  </select>
-                </div>
+            <div className="flex flex-col items-center justify-center h-full space-y-6 px-4">
+              {/* Logo - Mobil menüde */}
+              <div className="mb-8">
+                <Image src={mainIcon} alt="Sudenur Özgündöndü" width={64} height={64} />
               </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </nav>
-    </header>
+
+              {navItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="text-xl text-gray-700 hover:text-primary-600 transition-colors font-small"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              ))}
+
+              {/* Mobile Language Select */}
+              <select
+                value={locale}
+                onChange={(e) => changeLocale(e.target.value)}
+                className="bg-transparent border border-gray-300 rounded-md px-4 py-2 text-base mt-4"
+              >
+                <option value="tr">Türkçe</option>
+                <option value="en">English</option>
+              </select>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   )
 }

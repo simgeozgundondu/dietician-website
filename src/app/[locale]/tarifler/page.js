@@ -14,13 +14,13 @@ export default async function RecipesPage({ params }) {
   const t = await getTranslations('recipes')
 
   return (
-    <div className="bg-white min-h-screen py-20">
+    <div className="bg-white min-h-screen py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+        <div className="text-center mb-8">
+          <h1 className="text-xl md:text-2xl font-meira text-gray-900 mb-1">
             {t('title')}
           </h1>
-          <p className="text-xl text-gray-600">
+          <p className="text-md sm:text-lg text-gray-600">
             {t('subtitle')}
           </p>
         </div>

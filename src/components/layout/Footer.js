@@ -11,11 +11,11 @@ export default function Footer() {
   return (
     <footer className="bg-beige-50 border-t border-beige-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+        <div className=" grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
           {/* About */}
           <div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">
-              Sudenur Özgündöndü
+            <h3 className="font-meira text-lg text-gray-900 mb-4">
+              {tCommon('dietician')} Sudenur Özgündöndü
             </h3>
             <div className="text-gray-600 text-sm space-y-1">
               <p className="font-medium mb-2">{tContact('workingHours.title')}</p>
@@ -27,7 +27,7 @@ export default function Footer() {
 
           {/* Links */}
           <div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">
+            <h3 className="font-meira text-lg font text-gray-900 mb-4">
               {tCommon('home')}
             </h3>
             <ul className="space-y-2">
@@ -68,7 +68,7 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-4 ">
+            <h3 className="font-meira text-lg font text-gray-900 mb-4 ">
               {tCommon('contact')}
             </h3>
             <div className="space-y-2 text-sm text-gray-600">

@@ -59,7 +59,7 @@ export default function RecipesPreview() {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-bold text-gray-900"
+            className="font-meira text-3xl md:text-4xl text-gray-900"
           >
             {t('title')}
           </motion.h2>

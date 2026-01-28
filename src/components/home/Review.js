@@ -50,7 +50,7 @@ export default function ReviewsCarousel() {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-bold text-gray-900"
+            className="text-3xl md:text-4xl font-meira text-gray-900"
           >
             {locale === 'en' ? 'Reviews' : 'Geri Bildirimler'}
           </motion.h2>
