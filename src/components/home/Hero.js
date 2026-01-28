@@ -83,14 +83,14 @@ export default function Hero() {
             </motion.h1>
 
             {/* Subtitle */}
-            <motion.p
+            <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               className="font-meira text-lg md:text-xl lg:text-2xl text-gray-600 mb-12 max-w-2xl leading-relaxed"
             >
               {t('subtitle')}
-            </motion.p>
+            </motion.h1>
 
             {/* CTA Buttons */}
             <motion.div
