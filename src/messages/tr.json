@@ -45,9 +45,9 @@
         "title": "Hastalıklara Özel Beslenme",
         "description": "Diyabet, hipertansiyon ve diğer hastalıklara uygun beslenme planları"
       },
-      "online": {
-        "title": "Online Danışmanlık",
-        "description": "Uzaktan erişimle profesyonel beslenme desteği"
+      "pregnancy": {
+        "title": "Gebelik & Emzirme Dönemi Beslenmesi",
+        "description": "Anne ve bebek sağlığı için dengeli beslenme planları"
       }
     },
     "blog": {

@@ -2,13 +2,13 @@
 
 import { useTranslations } from 'next-intl'
 import { motion } from 'framer-motion'
-import { Scale, Dumbbell, Heart, Laptop } from 'lucide-react'
+import { Scale, Dumbbell, Heart, Baby } from 'lucide-react'
 
 const icons = {
   weightControl: Scale,
   athlete: Dumbbell,
   disease: Heart,
-  online: Laptop,
+  pregnancy: Baby,
 }
 
 export default function Services() {
@@ -28,8 +28,8 @@ export default function Services() {
       icon: 'disease',
     },
     {
-      key: 'online',
-      icon: 'online',
+      key: 'pregnancy',
+      icon: 'pregnancy',
     },
   ]
 
